@@ -22,4 +22,6 @@ public class Account {
     public void addFunds(double topUpAmount) {
         this.balance += topUpAmount;
     }
+    public void takeFunds(int fundsTaken){this.balance = this.getBalance() - fundsTaken;}
+
 }

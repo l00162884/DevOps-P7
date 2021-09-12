@@ -6,8 +6,8 @@ Feature: TopUp Account
   Scenario: Add money to Revolut account using debit card
     Given Danny has 10 euro in his euro Revolut account
     And Danny selects 100 euro as the topUp amount
-    And  Danny selects his DebitCard as his topUp method
-    #And  Danny selects his BankAccount as his topUp method
+#    And  Danny selects his DebitCard as his topUp method
+    And  Danny selects his BankAccount as his topUp method
     When Danny tops up
     Then The new balance of his euro account should now be 110
 
@@ -19,6 +19,18 @@ Feature: TopUp Account
     #And  Danny selects his BankAccount as his topUp method
     When Danny tops up
     Then The new balance of his euro account should now be 250
+
+
+  Scenario: Danny Buys Crypto Using Euro Account
+    Given Danny has 30 euro in his euro Revolut account now
+    And Danny buys 10 euro worth of crypto
+    And Danny uses his DebitCard as his topUp Method
+    #And  Danny selects his BankAccount as his topUp method
+    When Danny makes the purchase
+    Then The new balance of his euro account should be 20
+
+
+
 
 
 
